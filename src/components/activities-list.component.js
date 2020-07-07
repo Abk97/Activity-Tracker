@@ -43,7 +43,7 @@ export default class ActivitiesList extends Component {
   }
 
   activityList() {
-    return this.state.activity.map(currentactivity => {
+    return this.state.activities.map(currentactivity => {
       return <Activity activity={currentactivity} deleteActivity={this.deleteActivity} key={currentactivity._id}/>;
     })
   }

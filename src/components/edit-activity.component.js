@@ -77,7 +77,7 @@ export default class EditActivity extends Component {
   onSubmit(e) {
     e.preventDefault();
 
-    const exercise = {
+    const activity = {
       username: this.state.username,
       description: this.state.description,
       duration: this.state.duration,
