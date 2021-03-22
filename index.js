@@ -9,6 +9,7 @@ const port = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
+mongoose.Promise = global.Promise;
 const uri = keys.mongoURI;
 mongoose.connect(uri, {
   useNewUrlParser: true,
@@ -18,6 +19,7 @@ mongoose.connect(uri, {
 const connection = mongoose.connection;
 connection.once("open", () => {
   console.log("MongoDB database connection established successfully");
+  console.log(`URI = ${uri}`);
 });
 
 const activitiesRouter = require("./routes/activities");
